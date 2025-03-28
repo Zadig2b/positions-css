@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Démo Positions CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Démo des positions CSS</h1>
+  <p>Choisissez une position CSS pour chaque forme :</p>
+
+  <div class="container">
+    <div class="shape-container">
+      <div id="square" class="shape static">Carré</div>
+      <select onchange="changePosition('square', this.value)">
+        <option value="static">static</option>
+        <option value="relative">relative</option>
+        <option value="absolute">absolute</option>
+        <option value="fixed">fixed</option>
+        <option value="sticky">sticky</option>
+      </select>
+    </div>
+
+    <div class="shape-container">
+      <div id="circle" class="shape static">Cercle</div>
+      <select onchange="changePosition('circle', this.value)">
+        <option value="static">static</option>
+        <option value="relative">relative</option>
+        <option value="absolute">absolute</option>
+        <option value="fixed">fixed</option>
+        <option value="sticky">sticky</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+    function changePosition(id, newPosition) {
+      const element = document.getElementById(id);
+      const positions = ['static', 'relative', 'absolute', 'fixed', 'sticky'];
+
+      // Retire toutes les classes de position
+      positions.forEach(pos => element.classList.remove(pos));
+
+      // Applique la nouvelle
+      element.classList.add(newPosition);
+    }
+  </script>
+</body>
+</html>
