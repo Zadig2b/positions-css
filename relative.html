@@ -3,66 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Démo Interactive: position relative</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 30px;
-    }
-
-    .container {
-      position: relative;
-      border: 2px dashed #aaa;
-      height: 250px;
-      width: 400px;
-      padding: 10px;
-      background: #f9f9f9;
-      margin-bottom: 20px;
-    }
-
-    .ghost-placeholder {
-      width: 100px;
-      height: 100px;
-      border: 2px dashed red;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .relative-box {
-      position: relative;
-      background-color: tomato;
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 0 0 3px green inset;
-    }
-
-    .controls {
-      margin-top: 20px;
-      max-width: 400px;
-    }
-
-    .controls label {
-      display: block;
-      margin: 10px 0 4px;
-    }
-
-    .controls input {
-      width: 100%;
-    }
-
-    .label {
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="relative.css" />
 </head>
 <body>
+  <div id="navbar-container"></div>
+
   <h1>Démo interactive : <code>position: relative</code></h1>
 
   <div class="label">
@@ -104,5 +49,6 @@
 
     updatePosition(); // Initial call
   </script>
+      <script src="script.js"></script>
 </body>
 </html>
