@@ -7,43 +7,40 @@
 </head>
 <body>
   <h1>Démo des positions CSS</h1>
-  <p>Choisissez une position CSS pour chaque forme :</p>
+  <p>Chaque forme contient un menu déroulant pour changer sa position CSS. Scrolle la page pour tester sticky et fixed !</p>
 
-  <div class="container">
-    <div class="shape-container">
-      <div id="square" class="shape static">Carré</div>
-      <select onchange="changePosition('square', this.value)">
-        <option value="static">static</option>
-        <option value="relative">relative</option>
-        <option value="absolute">absolute</option>
-        <option value="fixed">fixed</option>
-        <option value="sticky">sticky</option>
-      </select>
-    </div>
+  <button onclick="resetPositions()">Réinitialiser les positions</button>
 
-    <div class="shape-container">
-      <div id="circle" class="shape static">Cercle</div>
-      <select onchange="changePosition('circle', this.value)">
-        <option value="static">static</option>
-        <option value="relative">relative</option>
-        <option value="absolute">absolute</option>
-        <option value="fixed">fixed</option>
-        <option value="sticky">sticky</option>
-      </select>
+  <div class="scroll-zone">
+    <div class="container">
+
+      <div class="shape-container">
+        <div id="square" class="shape static">
+          <select onchange="changePosition('square', this.value)">
+            <option value="static">static</option>
+            <option value="relative">relative</option>
+            <option value="absolute">absolute</option>
+            <option value="fixed">fixed</option>
+            <option value="sticky">sticky</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shape-container">
+        <div id="circle" class="shape static">
+          <select onchange="changePosition('circle', this.value)">
+            <option value="static">static</option>
+            <option value="relative">relative</option>
+            <option value="absolute">absolute</option>
+            <option value="fixed">fixed</option>
+            <option value="sticky">sticky</option>
+          </select>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <script>
-    function changePosition(id, newPosition) {
-      const element = document.getElementById(id);
-      const positions = ['static', 'relative', 'absolute', 'fixed', 'sticky'];
-
-      // Retire toutes les classes de position
-      positions.forEach(pos => element.classList.remove(pos));
-
-      // Applique la nouvelle
-      element.classList.add(newPosition);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

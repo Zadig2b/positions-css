@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 40px;
-    height: 2000px; /* Pour tester fixed/sticky */
+    height: 2000px;
     background: #f0f0f0;
   }
   
@@ -10,10 +10,27 @@ body {
     margin-bottom: 10px;
   }
   
+  button {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .scroll-zone {
+    height: 400px;
+    overflow-y: auto;
+    border: 2px dashed #aaa;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
   .container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    min-height: 600px;
   }
   
   .shape-container {
@@ -23,14 +40,21 @@ body {
   }
   
   .shape {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    line-height: 100px;
-    text-align: center;
+    width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-weight: bold;
     cursor: pointer;
+    padding: 10px;
+    border: 2px solid #333;
+  }
+  
+  .shape select {
+    width: 100px;
   }
   
   #square {
@@ -42,7 +66,7 @@ body {
     border-radius: 50%;
   }
   
-  /* Classes de position */
+  /* Position classes */
   .static {
     position: static;
   }
@@ -51,12 +75,14 @@ body {
     position: relative;
     top: 20px;
     left: 20px;
+    box-shadow: 0 0 0 4px green inset;
   }
   
   .absolute {
     position: absolute;
     top: 50px;
     left: 150px;
+    box-shadow: 0 0 0 4px orange inset;
   }
   
   .fixed {
@@ -64,10 +90,13 @@ body {
     top: 10px;
     right: 10px;
     z-index: 999;
+    box-shadow: 0 0 0 4px black inset;
   }
   
   .sticky {
     position: sticky;
     top: 10px;
+    background-color: purple;
+    box-shadow: 0 0 0 4px yellow inset;
   }
   
